@@ -43,8 +43,7 @@
             if evt.content.body == "!photo":
                 if str(evt.room_id) == str(ROOM_ID):
                     await self.send_photo()
-                    
-    								if self.is_loop_scheduled is not True:
+                    if self.is_loop_scheduled is not True:
                         self.is_loop_scheduled = True
                         await self.start_schedule_loop()
                 else:
