@@ -63,7 +63,7 @@ ok - time to actually build my bot. I used the echo bot as a starting point and 
 1. set up your python editing environment so that it can read the maubot python package. this ended up being critical because the auto-complete suggestions were more helpful than the documentation in many cases
 2. I found reverse engineering most helpful in my case. IE: use beeper to send an iMessage with the format I’m aiming for (a photo with no text). then in beeper, right click the message → view source and try to find the API calls that seem like thye would produce that payload.
 3. when in doubt, read the docs [here](https://matrix-org.github.io/matrix-python-sdk/) for the matrix python sdk 
-4. here’s the source code that I ended up with to run my bot
+4. [here](https://github.com/clearspace-team/iMessage-bot/blob/main/bot.py)’s the source code that I ended up with to run my bot
 
     
 
@@ -81,7 +81,7 @@ Once I had everything working from the docker container running on my laptop, I 
     
     1. signed up for an [ngrok](https://ngrok.com/) account and downloaded the [linux installation](https://ngrok.com/download) on my laptop
     2. unzipped the file and scp’ed the binary into my ec2 instance 
-        1. `scp -i "path/to/ec2_keys.pem" ~/Downloads/ngrok [ec2-user@ec2-IP-ADDRESS.us-east-2.compute.amazonaws.com](mailto:ec2-user@ec2-18-191-255-116.us-east-2.compute.amazonaws.com):~/`
+        1. `scp -i "path/to/ec2_keys.pem" ~/Downloads/ngrok ec2-user@ec2-IP-ADDRESS.us-east-2.compute.amazonaws.com:~/`
     3. authed with ngrok with the account I just signed up for 
         1. `ngrok config add-authtoken myToken`
     4. created a tunnel to port `29316` where my docker was running the Maubot Manager
